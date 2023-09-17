@@ -1,0 +1,30 @@
+{
+   "name": "node-dc",
+
+   "dockerComposeFile": [
+      "mongo-compose.yaml",
+      "node-dc-compose.yaml"
+   ],
+   "service": "node-dc",
+   "workspaceFolder": "/workspace",
+
+   "customizations": {
+      "vscode": {
+         "extensions": [
+            "streetsidesoftware.code-spell-checker",
+            "mattdd.gitless",
+            "DavidAnson.vscode-markdownlint",
+            "dbaeumer.vscode-eslint",
+            "ms-vscode.vscode-typescript-next"
+         ]
+      }
+   },
+
+   "forwardPorts": [
+      3080, // API
+      3081, // mongo-express
+      3087  // MongoDB
+   ],
+
+   "remoteUser": "node",
+}
