@@ -1,4 +1,4 @@
-ARG VARIANT=20.6.1-bookworm
+ARG VARIANT=18-bookworm
 FROM node:${VARIANT}
 
 ARG USERNAME=node
@@ -9,10 +9,10 @@ ENV PATH=${NPM_GLOBAL}/bin:${PATH}
 RUN if ! cat /etc/group | grep -e "^npm:" > /dev/null 2>&1; then groupadd -r npm; fi \
    && usermod -a -G npm ${USERNAME} \
    && umask 0002 \
-   && mkdir -p ${NPM_GLOBAL} \
+   && mkdir -p ${NPM_GLOBAL}/lib \
    && touch /usr/local/etc/npmrc \
-   && chown ${USERNAME}:npm ${NPM_GLOBAL} /usr/local/etc/npmrc \
-   && chmod g+s ${NPM_GLOBAL} \
+   && chown -R ${USERNAME}:npm ${NPM_GLOBAL} /usr/local/etc/npmrc \
+   && chmod -R g+s ${NPM_GLOBAL} \
    && npm config -g set prefix ${NPM_GLOBAL} \
    && su ${USERNAME} -c "npm config -g set prefix ${NPM_GLOBAL}" \
    && npm cache clean --force > /dev/null 2>&1

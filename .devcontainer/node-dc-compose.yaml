@@ -5,7 +5,7 @@ services:
          context: .
          dockerfile: node-dockerfile
          args:
-            VARIANT: 20.6.1-bookworm
+            VARIANT: 18-bookworm
       image: node-dc
       volumes:
          - ..:/workspace:cached
