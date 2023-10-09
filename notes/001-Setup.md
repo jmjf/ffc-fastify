@@ -1,6 +1,6 @@
 # Setting up
 
-I'm planning to work through the FreeCodeCamp Fastify example, which uses MongoDB. Getting that setup in dev containers has proven interesting.
+I'm planning to work through the [FreeCodeCamp Fastify example](https://www.freecodecamp.org/news/how-to-build-blazing-fast-rest-apis-with-node-js-mongodb-fastify-and-swagger-114e062db0c9/), which uses MongoDB. Getting that setup in dev containers has proven interesting.
 
 ## Mongo Express instead of Mongo Compass
 
