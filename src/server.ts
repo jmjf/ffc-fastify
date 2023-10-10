@@ -1,5 +1,5 @@
 import fastify from 'fastify';
-import { buildApp } from './app';
+import { buildApp } from './app.js';
 
 async function startServer() {
 

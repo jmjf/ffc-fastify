@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
-import { registerZpagesRoutes } from './api/zpages/zpages';
+import { registerZpagesRoutes } from './api/zpages/zpages.js';
 
 export async function buildApp(server: FastifyInstance) {
     server.register(registerZpagesRoutes, { prefix: '/zpages'});
